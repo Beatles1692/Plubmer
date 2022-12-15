@@ -1,7 +1,6 @@
 ﻿namespace Plumber.Core;
 public class PipeLine<TContext>
 {
-
     private readonly LinkedList<Func<TContext, Func<TContext, Task>, Task>> _steps = new LinkedList<Func<TContext, Func<TContext, Task>, Task>>();
 
     public PipeLine<TContext> AddNextStep(IPipelineStep<TContext> step) => AddNextStep((context, next) => step.ExecuteAsync(context, next));

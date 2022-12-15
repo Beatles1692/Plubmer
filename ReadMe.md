@@ -11,16 +11,17 @@ Each step will receive the next step of the pipeline and will be able to call it
 
 # Example
 ```csharp
-    [Fact]
+     [Fact]
     public async Task FibonacciTest()
     {
         var fibonacciStep = new Func<List<int>, Func<List<int>, Task>, Task>(async (context, next) =>
         {
             if (context.Count == 0)
                 context.Add(1);
-            if (context.Count == 1)
+            else if (context.Count == 1)
                 context.Add(1);
-            context.Add(context[context.Count - 1] + context[context.Count - 2]);
+            else
+                context.Add(context[context.Count - 1] + context[context.Count - 2]);
             await next(context);
         });
 
@@ -29,6 +30,6 @@ Each step will receive the next step of the pipeline and will be able to call it
         var context = new List<int>();
         await pipeline.ExecuteAsync(context);
 
-        Assert.Equal(new[] { 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144 }, context.ToArray());
+        Assert.Equal(new[] { 1, 1, 2, 3, 5, 8, 13, 21, 34, 55 }, context.ToArray());
     }
 ```
