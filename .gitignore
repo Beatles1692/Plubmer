@@ -14,6 +14,7 @@ BenchmarkDotNet.Artifacts/
 src/SignalR/clients/**/dist/
 modules/
 .ionide/
+TestResults/
 
 # File extensions
 *.aps
@@ -45,3 +46,4 @@ UpgradeLog.htm
 *.svclog
 mono_crash.*.json
 mono_crash.*.blob
+lcov.info

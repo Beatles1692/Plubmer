@@ -11,9 +11,6 @@ public class PipeLine<TContext>
         _steps.AddLast(step);
         return this;
     }
-
-
-
     public async Task ExecuteAsync(TContext context)
     {
         var firstNode = _steps.First;
