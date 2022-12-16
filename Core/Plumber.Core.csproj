@@ -8,6 +8,7 @@
     <PackageTags>Simple Pipeline Promise</PackageTags>
     <PackageProjectUrl>https://github.com/Beatles1692/Plubmer</PackageProjectUrl>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <Version>1.1.2</Version>
   </PropertyGroup>
 </Project>
