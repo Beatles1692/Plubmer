@@ -9,7 +9,8 @@ public class PipeLineTests
     [Fact]
     public async Task PipeLineMainFlow()
     {
-        const string EXPECTED_RESULT = "Hello\r\nOdd\r\nWorld!\r\nEven\r\nand Hello\r\nOdd\r\nWorld! for the second time\r\nEven\r\nand yet Hello\r\nOdd\r\nWorld! for the third time\r\nEven\r\nand again Hello\r\nOdd\r\nWorld! for the fourth time\r\nEven\r\n";
+        string nl = Environment.NewLine;
+        string EXPECTED_RESULT = $"Hello{nl}Odd{nl}World!{nl}Even{nl}and Hello{nl}Odd{nl}World! for the second time{nl}Even{nl}and yet Hello{nl}Odd{nl}World! for the third time{nl}Even{nl}and again Hello{nl}Odd{nl}World! for the fourth time{nl}Even{nl}";
         var pipeLine = new PipeLine<MessageContext>();
 
         var OddOrEven = new Func<MessageContext, Func<MessageContext, Task>, Task>(async (context, next) =>
