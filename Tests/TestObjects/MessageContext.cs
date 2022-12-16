@@ -4,8 +4,8 @@ namespace Tests.TestObjects;
 
 public class MessageContext
 {
-    public string UserName { get; set; }
-    public string Response { get; set; }
+    public string? UserName { get; set; }
+    public string? Response { get; set; }
     public int Count { get; set; }
     public int MaxCount { get; set; }
 
